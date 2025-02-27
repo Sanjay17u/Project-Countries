@@ -77,3 +77,16 @@ a {
     margin-block: 8px;
 }
 
+@media(max-width: 768px) {
+    .countries__container {
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .header__content p {
+        font-size: 12px;
+    }
+}

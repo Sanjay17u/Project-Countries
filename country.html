@@ -5,9 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Country</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght,YTLC@6..12,75..125,200..1000,440..540&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=NKNFyDiGw7K2&format=png&color=000000" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./country.css">
     <script src="country.js" defer></script>
 </head>
 <body>
-    <h1>Country</h1>
+    <header class="header">
+        <div class="header__content">
+            <h2 class="title">Where in the world?</h2>
+            <p><i class="fa-regular fa-moon"></i> &nbsp;&nbsp;Dark Mode</p>
+        </div>
+    </header>
+    <main>
+        <a href="#" class="back__button"><i class="fa-solid fa-arrow-left-long"></i> &nbsp;&nbsp;Back</a>
+        <div class="country__details">
+            <img src="" alt="">
+            <div class="details__text__container">
+               <h1></h1> 
+               <div class="details__text">
+                <p><b>Native Name: </b> &nbsp;<span class="native__name"></span></p>
+                <p><b>Population: </b> &nbsp;<span class="population"></span></p>
+                <p><b>Region: </b> &nbsp;<span class="region"></span></p>
+                <p><b>Sub Region: </b> &nbsp;<span class="sub__region"></span></p>
+                <p><b>Capital: </b> &nbsp;<span class="capital"></span></p>
+                <p><b>Top Level Domain: </b> &nbsp;<span class="top__level__domain"></span></p>
+                <p><b>Currencies: </b> &nbsp;<span class="currencies"></span></p>
+                <p><b>Languages: </b> &nbsp;<span class="languages"></span></p>
+               </div>
+               <div class="border__countries">
+                <p><b>Border Countries: </b> &nbsp;
+                    <a href="#">France</a>
+                    <a href="#">Germany</a>
+                    <a href="#">Netherlands</a>
+                </p>
+            </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
