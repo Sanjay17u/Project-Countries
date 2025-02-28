@@ -3,9 +3,25 @@
     font-family: 'Nunito Sans', serif;
 }
 
+:root {
+    --background-color: white;
+    --text-color: black;
+    --elements-color: white;
+}
+
 body {
     margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+
 }
+
+body.dark {
+    --background-color: hsl(207, 26%, 17%);
+    --text-color: white;
+    --elements-color: hsl(209, 23%, 22%);
+}
+
 
 main {
     padding: 24px;
@@ -20,9 +36,14 @@ a {
     font-weight: 800;
 }
 
+.theme__changer {
+    cursor: pointer;
+}
+
 .header {
     box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.1);
     padding-inline: 24px;
+    background-color: var(--elements-color);
 }
 
 .header__content {
@@ -49,6 +70,8 @@ a {
     border-radius: 4px;
     padding: 0 24px;
     display: flex;
+    background-color: var(--elements-color);
+    color: var(--text-color)
 }
 
 .search__container i {
@@ -62,6 +85,8 @@ a {
     outline: none;
     padding: 18px;
     flex-grow: 1;
+    background-color: inherit;
+    color: inherit;
 }
 
 .search__container input::placeholder {
@@ -84,6 +109,8 @@ a {
     outline: none;
     box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    background-color: var(--elements-color);
+    color: var(--text-color);
 }
 
 .country__card {
@@ -94,6 +121,7 @@ a {
     box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    background-color: var(--elements-color);
 }
 
 .country__card:hover {

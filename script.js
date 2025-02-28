@@ -1,6 +1,7 @@
 const countriesContainer = document.querySelector(".countries__container");
 const filterByRegion = document.querySelector('.filter__by__region')
 const searchInput = document.querySelector('.search__container input')
+const themeChanger = document.querySelector('.theme__changer')
 
 let allCountriesData
 
@@ -46,4 +47,8 @@ searchInput.addEventListener('input', (e) => {
   const filteredCountries = allCountriesData.filter((country) => country.name.common.toLowerCase().includes(e.target.value.toLowerCase()))
 
   renderCountries(filteredCountries)
+})
+
+themeChanger.addEventListener('click', () => {
+  document.body.classList.toggle('dark')
 })
