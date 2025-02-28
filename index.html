@@ -15,22 +15,26 @@
 <body>
     <header class="header">
         <div class="header__content">
-            <h2 class="title">Where in the world?</h2>
+            <h2 class="title"><a href="/">Where in the world?</a></h2>
             <p><i class="fa-regular fa-moon"></i> &nbsp;&nbsp;Dark Mode</p>
         </div>
     </header>
     <main>
-        <div class="countries__container">
-            <!-- <a href="#" class="country__card">
-                <img src="https://flagcdn.com/in.svg" alt="flag__image">
-                <div class="card__text">
-                    <h3 class="card__title">India</h3>
-                    <p><b>Population: </b>81,770,900</p>
-                    <p><b>Region: </b>Asia</p>
-                    <p><b>Capital: </b>New Delhi</p>    
-                </div>
-            </a> -->
+        <div class="search__filter__container" >
+            <div class="search__container" >
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search for a Country...">
+            </div>
+            <select class="filter__by__region">
+                <option hidden>Filter by Region</option>
+                <option value="Asia">Asia</option>
+                <option value="America">America</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Africa">Africa</option>
+            </select>
         </div>
+        <div class="countries__container"></div>
     </main>
 </body>
 </html>
