@@ -13,18 +13,24 @@ const languages = document.querySelector('.languages')
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => res.json())
   .then(([country]) => {
-    console.log(Object.values(country.name.nativeName)[0].common)
     flag__image.src = country.flags.svg
     countryNameH1.innerText = country.name.common
-    population.innerText = country.population.toLocaleString('en-IN')
-    region.innerText = country.region
-    subRegion.innerText = country.subregion
-    capital.innerText = country.capital?.[0]
-    topLevelDomain.innerText = country.tld.join(', ')
+    population.innerText = country.population.toLocaleString('en-IN') || 'Data not available'
+    region.innerText = country.region || 'Data not available'
+    subRegion.innerText = country.subregion || 'Data not available'
+    capital.innerText = country.capital?.[0] || 'Data not available'
+    topLevelDomain.innerText = country.tld?.join(', ') || 'Data not available'
     if(country.currencies) {
-      currencies.innerText = Object.values(country.currencies).map((currency) => currency.name).join(', ')
+      currencies.innerText = Object.values(country.currencies).map((currency) => currency.name).join(', ') || 'Data not available'
+    } else {
+      currencies.innerText = 'Data not available'
     }
-    languages.innerText = Object.values(country.languages).join(", ")
+
+    if (country.languages) {
+      languages.innerText = Object.values(country.languages).join(', ') || 'Data not available'
+    } else {
+      languages.innerText = 'Data not available'
+    }
 
     if(country.name.nativeName) {
       nativeName.innerText = Object.values(country.name.nativeName)[0].common
