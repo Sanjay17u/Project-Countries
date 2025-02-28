@@ -9,10 +9,13 @@ const capital = document.querySelector('.capital')
 const topLevelDomain = document.querySelector('.top__level__domain')
 const currencies = document.querySelector('.currencies')
 const languages = document.querySelector('.languages')
+const borderCountries = document.querySelector('.border__countries__para')
+
 
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => res.json())
   .then(([country]) => {
+    // console.log(country.borders)
     flag__image.src = country.flags.svg
     countryNameH1.innerText = country.name.common
     population.innerText = country.population.toLocaleString('en-IN') || 'Data not available'
@@ -36,5 +39,20 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
       nativeName.innerText = Object.values(country.name.nativeName)[0].common
     } else {
       nativeName.innerText = country.name.common
+    }
+
+    if(country.borders) {
+      country.borders.forEach((border) => {
+        // console.log(border)
+        fetch(`https://restcountries.com/v3.1/alpha/${border}`).then((res) => res.json())
+        .then(([borderCountry]) => {
+          // console.log(borderCountry)
+          const borderCountryTag = document.createElement('a')
+          borderCountryTag.innerText = borderCountry.name.common
+          borderCountryTag.href = `country.html?name=${borderCountry.name.common}`
+          // console.log(borderCountryTag)
+          borderCountries.append(borderCountryTag)
+        })
+      })
     }
   })
