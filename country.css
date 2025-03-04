@@ -15,6 +15,20 @@ main {
     margin-left: 3rem;
 }
 
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+}
+
+body.dark {
+    --background-color: hsl(207, 26%, 17%);
+    --text-color: white;
+    --elements-color: hsl(209, 23%, 22%);
+}
+
+
 .country__details {
     display: flex;
     margin-top: 64px;

@@ -10,6 +10,7 @@ const topLevelDomain = document.querySelector('.top__level__domain')
 const currencies = document.querySelector('.currencies')
 const languages = document.querySelector('.languages')
 const borderCountries = document.querySelector('.border__countries__para')
+const themeChanger = document.querySelector('.theme__changer')
 
 
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
@@ -53,3 +54,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
       })
     }
   })
+
+themeChanger.addEventListener('click', (e) => {
+  document.body.classList.toggle('dark')
+})
